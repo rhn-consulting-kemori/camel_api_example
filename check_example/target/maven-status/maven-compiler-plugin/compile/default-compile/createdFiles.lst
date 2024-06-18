@@ -1,0 +1,4 @@
+com/redhat/example/RestDslRouteBuilder.class
+com/redhat/example/beans/CardCheckBean.class
+com/redhat/example/types/CardCheckResponseType.class
+com/redhat/example/CamelAPIExampleApplication.class
