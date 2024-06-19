@@ -1,4 +1,4 @@
 /home/kemori/demo/camel_api_example/check_example/src/main/java/com/redhat/example/CamelAPIExampleApplication.java
 /home/kemori/demo/camel_api_example/check_example/src/main/java/com/redhat/example/RestDslRouteBuilder.java
-/home/kemori/demo/camel_api_example/check_example/src/main/java/com/redhat/example/beans/CardCheckBean.java
-/home/kemori/demo/camel_api_example/check_example/src/main/java/com/redhat/example/types/CardCheckResponseType.java
+/home/kemori/demo/camel_api_example/check_example/src/main/java/com/redhat/example/rule/CardCheckRule.java
+/home/kemori/demo/camel_api_example/check_example/src/main/java/com/redhat/example/type/CardCheckResponseType.java

@@ -1,0 +1,2 @@
+https://qiita.com/Erina/items/72933529e61f7de7dc5e
+https://github.com/kiegroup/kogito-examples/blob/main/kogito-springboot-examples/decisiontable-springboot-example/src/main/java/org/kie/kogito/queries/Applicant.java
