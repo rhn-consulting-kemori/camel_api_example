@@ -10,4 +10,4 @@ podman build -t <your image tag> .
 podman run -d --name <container name> -p 8182:8182 <your image tag>
 
 ## Curl
-curl http://localhost:8182/camel/mock/card-check/3540000100010001
+curl http://localhost:8182/camel/mock/card-check/A-001/3540000100010001

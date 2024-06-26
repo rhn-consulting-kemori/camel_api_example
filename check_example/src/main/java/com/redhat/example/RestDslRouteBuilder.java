@@ -22,13 +22,14 @@ public class RestDslRouteBuilder extends RouteBuilder {
 
         // Routing
         rest("/mock")
-            .get("/card-check/{cardnumber}").produces("application/json").outType(CardCheckResponseType.class)
+            .get("/card-check/{requestid}/{cardnumber}").produces("application/json").outType(CardCheckResponseType.class)
+                .param().name("requestid").type(RestParamType.path).description("REQUEST_ID").dataType("string").endParam()
                 .param().name("cardnumber").type(RestParamType.path).description("CARD_NUMBER").dataType("string").endParam()
                 .to("direct:card-check");
 
         // Camel Route
         from("direct:card-check")
-            .bean(CardCheckRule.class, "checkCard(${header.cardnumber})");
+            .bean(CardCheckRule.class, "checkCard(${header.requestid}, ${header.cardnumber})");
 
     }
 }

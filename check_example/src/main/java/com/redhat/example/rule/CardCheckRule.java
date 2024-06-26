@@ -1,6 +1,7 @@
 package com.redhat.example.rule;
 
 import org.springframework.stereotype.Component;
+import com.redhat.example.type.CardCheckRequestType;
 import com.redhat.example.type.CardCheckResponseType;
 
 @Component
@@ -9,11 +10,12 @@ public class CardCheckRule {
     /** カード番号 */
     private String cardnumber;
 
-    public CardCheckResponseType checkCard(String cardnumber) {
+    public CardCheckResponseType checkCard(String requestid, String cardnumber) {
         
         this.cardnumber = cardnumber;
-
-        CardCheckResponseType responseType = new CardCheckResponseType(cardnumber);
+        CardCheckRequestType requestType = new CardCheckRequestType(requestid, cardnumber);
+        CardCheckResponseType responseType = new CardCheckResponseType();
+        responseType.setService_request(requestType);
 
         // Rule
         if(!check_length()) {
