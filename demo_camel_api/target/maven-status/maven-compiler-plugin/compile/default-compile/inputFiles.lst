@@ -1,0 +1,10 @@
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/CamelAPIExampleApplication.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/RestDslRouteBuilder.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/rule/DepositCategoryRule.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/rule/DepositEntryCheckRule.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/type/DepositCategoryRequestType.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/type/DepositCategoryResponseType.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/type/DepositEntryCheckRequestType.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/type/DepositEntryCheckResponseType.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/type/ServiceRequestType.java
+/Users/kemori/dev/demo/camel_api_example/demo_camel_api/src/main/java/com/redhat/example/type/ServiceResponseType.java

@@ -1,0 +1,10 @@
+com/redhat/example/type/DepositCategoryRequestType.class
+com/redhat/example/type/DepositCategoryResponseType.class
+com/redhat/example/type/ServiceResponseType.class
+com/redhat/example/rule/DepositEntryCheckRule.class
+com/redhat/example/type/DepositEntryCheckRequestType.class
+com/redhat/example/type/DepositEntryCheckResponseType.class
+com/redhat/example/rule/DepositCategoryRule.class
+com/redhat/example/RestDslRouteBuilder.class
+com/redhat/example/type/ServiceRequestType.class
+com/redhat/example/CamelAPIExampleApplication.class

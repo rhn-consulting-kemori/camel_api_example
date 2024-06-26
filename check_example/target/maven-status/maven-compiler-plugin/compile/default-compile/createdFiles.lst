@@ -1,7 +1,0 @@
-com/redhat/example/type/ServiceResponseType.class
-com/redhat/example/RestDslRouteBuilder.class
-com/redhat/example/type/ServiceRequestType.class
-com/redhat/example/rule/CardCheckRule.class
-com/redhat/example/type/CardCheckRequestType.class
-com/redhat/example/type/CardCheckResponseType.class
-com/redhat/example/CamelAPIExampleApplication.class
