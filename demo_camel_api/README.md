@@ -26,7 +26,12 @@ POST
 {"request_id": "A-011", "card_number": "3540000100010001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_amount": 10000, "excess_money_handling_category": "10"}
 
 --------------------------------
-## deposit-entry-check
+## deposit-category
 http://localhost:8183/camel/demo/deposit-category
 
 {"request_id": "A-001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611"}
+
+## check-available-deposit-amount
+http://localhost:8183/camel/demo/check-available-deposit-amount
+
+{"request_id": "A-001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_category_code": "9"}
