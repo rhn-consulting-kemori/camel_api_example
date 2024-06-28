@@ -11,6 +11,6 @@ public class SeikyuCompositeUnitEntity {
     private SeikyuSimpleUnitEntity total_billing;
 
     /** 商品単位 */
-    private Map products_billing_map;
+    private Map<String, SeikyuSimpleUnitEntity> products_billing_map;
     
 }

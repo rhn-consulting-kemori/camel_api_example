@@ -15,11 +15,17 @@ import com.redhat.example.type.DepositCategoryRequestType;
 import com.redhat.example.type.DepositCategoryResponseType;
 import com.redhat.example.type.CheckAvailableDepositAmountRequestType;
 import com.redhat.example.type.CheckAvailableDepositAmountResponseType;
+import com.redhat.example.type.DepositAllocationRequestType;
+import com.redhat.example.type.DepositAllocationResponseType;
+import com.redhat.example.type.DepositRequestType;
+import com.redhat.example.type.DepositResponseType;
 
 // Rule
 import com.redhat.example.rule.DepositEntryCheckRule;
 import com.redhat.example.rule.DepositCategoryRule;
 import com.redhat.example.rule.CheckAvailableDepositAmountRule;
+import com.redhat.example.rule.DepositAllocationRule;
+import com.redhat.example.rule.DepositRule;
 
 @Component
 public class RestDslRouteBuilder extends RouteBuilder {
@@ -39,9 +45,11 @@ public class RestDslRouteBuilder extends RouteBuilder {
             .post("/deposit-category").consumes("application/json").produces("application/json").type(DepositCategoryRequestType.class).outType(DepositCategoryResponseType.class)
                 .to("direct:deposit-category")
             .post("/check-available-deposit-amount").consumes("application/json").produces("application/json").type(CheckAvailableDepositAmountRequestType.class).outType(CheckAvailableDepositAmountResponseType.class)
-                .to("direct:check-available-deposit-amount");
+                .to("direct:check-available-deposit-amount")
             .post("/deposit-allocation").consumes("application/json").produces("application/json").type(DepositAllocationRequestType.class).outType(DepositAllocationResponseType.class)
-                .to("direct:deposit-allocation");
+                .to("direct:deposit-allocation")
+            .post("/deposit").consumes("application/json").produces("application/json").type(DepositRequestType.class).outType(DepositResponseType.class)
+                .to("direct:deposit");
 
         // Camel Route
         from("direct:deposit-entry-check")
@@ -52,6 +60,8 @@ public class RestDslRouteBuilder extends RouteBuilder {
             .bean(CheckAvailableDepositAmountRule.class, "simulate");
         from("direct:deposit-allocation")
             .bean(DepositAllocationRule.class, "simulate");
+        from("direct:deposit")
+            .bean(DepositRule.class, "deposit");
 
     }
 }

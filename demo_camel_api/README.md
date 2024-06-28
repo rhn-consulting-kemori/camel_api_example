@@ -35,3 +35,112 @@ http://localhost:8183/camel/demo/deposit-category
 http://localhost:8183/camel/demo/check-available-deposit-amount
 
 {"request_id": "A-001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_category_code": "9"}
+
+## deposit-allocation
+http://localhost:8183/camel/demo/deposit-allocation
+
+{
+    "request_id": "A-001", 
+    "customer_contract_number": "0000000001", 
+    "customer_billing_due_date": "20240515", 
+    "contract_settlement_date":"20240610", 
+    "deposit_date": "20240611", 
+    "deposit_category_code": "9", 
+    "deposit_amount": 80616, 
+    "excess_money_handling_category": "9",
+    "deposit_available_amount_data": {
+        "estimated_billing_amount": {
+            "total_billing": {
+                "billing_principal_amount": 80000,
+                "billing_interest_amount": 369,
+                "deposit_principal_amount": 0,
+                "deposit_interest_amount": 0
+            },
+            "products_billing_map": {
+                "sprv": {
+                    "billing_principal_amount": 30000,
+                    "billing_interest_amount": 369,
+                    "deposit_principal_amount": 0,
+                    "deposit_interest_amount": 0
+                },
+                "sp1": {
+                    "billing_principal_amount": 50000,
+                    "billing_interest_amount": 0,
+                    "deposit_principal_amount": 0,
+                    "deposit_interest_amount": 0
+                }
+            }
+        },
+        "deposit_available_amount": {
+            "total_amout": {
+                "principal_amount": 80000,
+                "interest_amount": 369
+            },
+            "products_amount_map": {
+                "sprv": {
+                    "principal_amount": 30000,
+                    "interest_amount": 369
+                },
+                "sp1": {
+                    "principal_amount": 50000,
+                    "interest_amount": 0
+                }
+            }
+        }
+    }
+}
+
+## deposit
+http://localhost:8183/camel/demo/deposit
+
+{
+    "request_id": "A-001", 
+    "customer_contract_number": "0000000001", 
+    "customer_billing_due_date": "20240515", 
+    "contract_settlement_date":"20240610", 
+    "deposit_date": "20240611", 
+    "deposit_category_code": "9", 
+    "deposit_amount": 10000, 
+    "excess_money_handling_category": "9",
+    "deposit_allocation_data": {
+        "deposit_allocation_amount": {
+            "total_amout": {
+                "principal_amount": 10000,
+                "interest_amount": 0
+            },
+            "products_amount_map": {
+                "sprv": {
+                    "principal_amount": 10000,
+                    "interest_amount": 0
+                },
+                "sp1": {
+                    "principal_amount": 0,
+                    "interest_amount": 0
+                }
+            }
+        },
+        "estimated_billing_amount": {
+            "total_billing": {
+                "billing_principal_amount": 70000,
+                "billing_interest_amount": 369,
+                "deposit_principal_amount": 10000,
+                "deposit_interest_amount": 0
+            },
+            "products_billing_map": {
+                "sprv": {
+                    "billing_principal_amount": 20000,
+                    "billing_interest_amount": 369,
+                    "deposit_principal_amount": 10000,
+                    "deposit_interest_amount": 0
+                },
+                "sp1": {
+                    "billing_principal_amount": 50000,
+                    "billing_interest_amount": 0,
+                    "deposit_principal_amount": 0,
+                    "deposit_interest_amount": 0
+                }
+            }
+        },
+        "excess_money": 0
+    }
+}

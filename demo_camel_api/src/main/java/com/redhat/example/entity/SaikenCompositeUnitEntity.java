@@ -11,6 +11,6 @@ public class SaikenCompositeUnitEntity {
     private SaikenSimpleUnitEntity total_amout;
 
     /** 商品単位 */
-    private Map products_amount_map;
+    private Map<String, SaikenSimpleUnitEntity> products_amount_map;
     
 }
