@@ -1,4 +1,4 @@
-# check_example
+# Set up
 ## Build & Run
 mvn clean spring-boot:run
 
@@ -6,13 +6,14 @@ mvn clean spring-boot:run
 mvn package
 podman build -t <your image tag> .
 
-## Run COntainer
+## Run Container
 podman run -d --name <container name> -p 8183:8183 <your image tag>
 
+# API
 ## deposit-entry-check
 http://localhost:8183/camel/demo/deposit-entry-check
 
-POST
+[POST]
 {"request_id": "A-001", "card_number": "3540000100010001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_amount": 10000, "excess_money_handling_category": "9"}
 {"request_id": "", "card_number": "3540000100010001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_amount": 10000, "excess_money_handling_category": "9"}
 {"request_id": "A-003", "card_number": "35400001000100019", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_amount": 10000, "excess_money_handling_category": "9"}
@@ -29,16 +30,19 @@ POST
 ## deposit-category
 http://localhost:8183/camel/demo/deposit-category
 
+[POST]
 {"request_id": "A-001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611"}
 
 ## check-available-deposit-amount
 http://localhost:8183/camel/demo/check-available-deposit-amount
 
+[POST]
 {"request_id": "A-001", "customer_contract_number": "0000000001", "customer_billing_due_date": "20240515", "contract_settlement_date":"20240610", "deposit_date": "20240611", "deposit_category_code": "9"}
 
 ## deposit-allocation
 http://localhost:8183/camel/demo/deposit-allocation
 
+[POST]
 {
     "request_id": "A-001", 
     "customer_contract_number": "0000000001", 
@@ -93,6 +97,7 @@ http://localhost:8183/camel/demo/deposit-allocation
 ## deposit
 http://localhost:8183/camel/demo/deposit
 
+[POST]
 {
     "request_id": "A-001", 
     "customer_contract_number": "0000000001", 
