@@ -31,7 +31,6 @@ import com.redhat.example.entity.SeikyuSimpleUnitEntity;
 @Component
 public class CheckAvailableDepositAmountRule {
 
-    @Autowired
     private AppConfig appConfig;
 
     public void simulate(Exchange exchange) {
@@ -48,6 +47,7 @@ public class CheckAvailableDepositAmountRule {
 
         // 請求予定額の設定
         Map<String, SeikyuSimpleUnitEntity> products_seikyu_map = new HashMap();
+        appConfig = new AppConfig();
         products_seikyu_map.put("sp1", appConfig.getSp1_seikyu());
         products_seikyu_map.put("sprv", appConfig.getSprv_seikyu());
 

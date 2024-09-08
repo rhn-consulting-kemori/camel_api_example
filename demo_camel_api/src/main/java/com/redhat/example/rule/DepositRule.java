@@ -22,9 +22,6 @@ import com.redhat.example.entity.SaikenSimpleUnitEntity;
 @Component
 public class DepositRule {
 
-    @Autowired
-    private AppConfig appConfig;
-
     public void deposit(Exchange exchange) {
 
         /**
@@ -43,6 +40,7 @@ public class DepositRule {
         deposit_data.setEstimated_billing_amount(request_body.getDeposit_allocation_data().getEstimated_billing_amount());
 
         Map<String, SaikenSimpleUnitEntity> products_balance_map = new HashMap();
+        AppConfig appConfig = new AppConfig();
         products_balance_map.put("sp1", appConfig.getSp1_zandaka());
         products_balance_map.put("sprv", appConfig.getSprv_zandaka());
 

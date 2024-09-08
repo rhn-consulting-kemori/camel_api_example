@@ -14,7 +14,7 @@ import com.redhat.example.entity.AvailableDepositAmountDataEntity;
 @Component
 public class DepositAllocationRequestType extends ServiceRequestType {
 
-    /** 個人契約番号 */
+    /** 顧客契約番号 */
     private String customer_contract_number;
 
     /** 入金日 */

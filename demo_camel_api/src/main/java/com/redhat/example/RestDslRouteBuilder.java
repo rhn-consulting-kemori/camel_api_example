@@ -19,6 +19,8 @@ import com.redhat.example.type.DepositAllocationRequestType;
 import com.redhat.example.type.DepositAllocationResponseType;
 import com.redhat.example.type.DepositRequestType;
 import com.redhat.example.type.DepositResponseType;
+import com.redhat.example.type.KijitsuAllocationDepositRequestType;
+import com.redhat.example.type.KijitsuAllocationDepositResponseType;
 
 // Rule
 import com.redhat.example.rule.DepositEntryCheckRule;
@@ -49,7 +51,9 @@ public class RestDslRouteBuilder extends RouteBuilder {
             .post("/deposit-allocation").consumes("application/json").produces("application/json").type(DepositAllocationRequestType.class).outType(DepositAllocationResponseType.class)
                 .to("direct:deposit-allocation")
             .post("/deposit").consumes("application/json").produces("application/json").type(DepositRequestType.class).outType(DepositResponseType.class)
-                .to("direct:deposit");
+                .to("direct:deposit")
+            .post("/kijitsu-allocation-deposit").consumes("application/json").produces("application/json").type(KijitsuAllocationDepositRequestType.class).outType(KijitsuAllocationDepositResponseType.class)
+                .to("direct:kijitsu-allocation-deposit");
 
         // Camel Route
         from("direct:deposit-entry-check")
@@ -62,6 +66,8 @@ public class RestDslRouteBuilder extends RouteBuilder {
             .bean(DepositAllocationRule.class, "simulate");
         from("direct:deposit")
             .bean(DepositRule.class, "deposit");
+        from("direct:kijitsu-allocation-deposit")
+            .process("kijitsuAllocationDepositProcessor");
 
     }
 }

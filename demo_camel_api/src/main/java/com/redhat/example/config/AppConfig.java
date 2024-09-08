@@ -1,14 +1,13 @@
 package com.redhat.example.config;
 
 import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import java.math.BigDecimal;
+import org.springframework.stereotype.Component;
 import com.redhat.example.entity.SeikyuSimpleUnitEntity;
 import com.redhat.example.entity.SaikenSimpleUnitEntity;
 
+@Component
 @Data
-@Configuration
-@ConfigurationProperties("app")
 public class AppConfig {
     
     /** Config Parameter */
@@ -17,4 +16,12 @@ public class AppConfig {
     private SaikenSimpleUnitEntity sp1_zandaka;
     private SaikenSimpleUnitEntity sprv_zandaka;
     
+    /** コンストラクター */
+    public AppConfig() {
+        sp1_seikyu = new SeikyuSimpleUnitEntity(BigDecimal.valueOf(50000), BigDecimal.valueOf(0), BigDecimal.valueOf(0), BigDecimal.valueOf(0));
+        sprv_seikyu = new SeikyuSimpleUnitEntity(BigDecimal.valueOf(30000), BigDecimal.valueOf(369), BigDecimal.valueOf(0), BigDecimal.valueOf(0));
+        sp1_zandaka = new SaikenSimpleUnitEntity(BigDecimal.valueOf(50000), BigDecimal.valueOf(0));
+        sprv_zandaka = new SaikenSimpleUnitEntity(BigDecimal.valueOf(30000), BigDecimal.valueOf(0));
+    }
+
 }

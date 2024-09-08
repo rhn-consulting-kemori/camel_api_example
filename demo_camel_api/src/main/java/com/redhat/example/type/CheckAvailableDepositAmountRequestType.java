@@ -11,7 +11,7 @@ import com.redhat.example.type.ServiceRequestType;
 @Component
 public class CheckAvailableDepositAmountRequestType extends ServiceRequestType {
     
-    /** 個人契約番号 */
+    /** 顧客契約番号 */
     private String customer_contract_number;
 
     /** 入金日 */
