@@ -7,6 +7,9 @@ import lombok.Data;
 @Data
 public class DepositDataEntity {
     
+    /** 入金種類区分 */
+    private String deposit_category_code;
+    
     /** 入金充当額 */
     private SaikenCompositeUnitEntity deposit_allocation_amount;
 

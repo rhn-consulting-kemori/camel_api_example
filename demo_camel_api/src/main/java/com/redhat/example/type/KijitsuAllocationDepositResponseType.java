@@ -14,9 +14,6 @@ import com.redhat.example.entity.DepositDataEntity;
 @Component
 public class KijitsuAllocationDepositResponseType extends ServiceResponseType {
 
-    /** 入金種類区分 */
-    private String deposit_category_code;
-
     /** 入金結果情報 */
     private DepositDataEntity deposit_data;
 

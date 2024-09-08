@@ -38,6 +38,7 @@ public class DepositRule {
         deposit_data.setDeposit_allocation_amount(request_body.getDeposit_allocation_data().getDeposit_allocation_amount());
         deposit_data.setExcess_money(request_body.getDeposit_allocation_data().getExcess_money());
         deposit_data.setEstimated_billing_amount(request_body.getDeposit_allocation_data().getEstimated_billing_amount());
+        deposit_data.setDeposit_category_code(request_body.getDeposit_category_code());
 
         Map<String, SaikenSimpleUnitEntity> products_balance_map = new HashMap();
         AppConfig appConfig = new AppConfig();

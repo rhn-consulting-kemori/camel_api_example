@@ -57,7 +57,6 @@ public class KijitsuAllocationDepositProcessor implements Processor {
         deposit_category_rule.categorise(exchange);
         DepositCategoryResponseType category_response = exchange.getMessage().getBody(DepositCategoryResponseType.class);
 
-        exchange_message.setDeposit_category_code(category_response.getDeposit_category_code());
         exchange_message.setResult(
             category_response.getResponse_result(), 
             category_response.getErr_code(), 
